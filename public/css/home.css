@@ -1,0 +1,309 @@
+.slider{
+    margin-bottom: 120px;
+    /*border-bottom: 2px solid #ffccaa;*/
+}
+.flexslider{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.w-100-r{
+    width: 100%;
+    height: 570px;
+}
+.w-100-rp{
+    width: 100%;
+    height: 570px;
+    background-color: #ffffff;
+}
+.banner-text{
+position: absolute;
+top: 40%;
+width: 100%;
+left: 10%;
+}
+.banner-text .text{
+    width: 30.12%;
+    float: left;
+    padding: 30px 30px;
+    background-color: #ffffff;
+}
+.banner-text .text h2 {
+    font-size: 25px;
+    line-height: 1.6em;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 400;
+    font-family: 'Roboto Slab', sans-serif;
+}
+.banner-text .text p{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.banner-text .text .read-more {
+    font-size: 12px;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 2px 18px;
+    margin-top: 20px;
+    display: inline-block;
+    background: #38bb79;
+    color: #FFFFFF !important;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    display: inline-block;
+    transition: background .45s ease-out;
+}
+
+.text-holder{
+    margin: -50px 50px 0px 50px;
+    background-color: #ffffff;
+    padding: 30px 30px 60px;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,0.3);
+    width: 570px;
+}
+.cat-link{
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-holder .cat-link a, :visited{
+    padding: 5px 10px;
+    text-align: center !important;
+    color: #34495e;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    float: none;
+}
+.entry-header{
+    text-align: center;
+    padding: 0 5px;
+    margin-bottom: 15px;
+}
+.entry-header .entry-title a{
+    font-size: 29.88px;
+    line-height: 33.88px;
+    color: #34495e;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+}
+.entry-meta span {
+    display: inline-block;
+    margin-right: 26px;
+    text-transform: capitalize;
+}
+.entry-meta span a{
+    font-size: 12px;
+    line-height: 30px;
+    color: #34495e;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.entry-excerpt p{
+    font-size: 17px;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+.entry-footer .read-more{
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    padding: 2px 18px;
+    margin-top: 5px;
+    display: inline-block;
+    background: #38bb79;
+    color: #FFFFFF !important;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 25px;
+    display: inline-block;
+    transition: background .45s ease-out;
+    float: right;
+}
+
+.widget-area .widget {
+    margin-bottom: 40px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,0.3);
+    padding: 25px;
+}
+.widget-area .widget-title {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    background: #f0f0f0;
+    text-align: center;
+    margin: 0 0 32px;
+    padding: 14px 5px;
+    font-family: 'Roboto Slab', sans-serif;
+    color: #34495e;
+    text-transform: uppercase;
+}
+.widget-area .widget ul {
+    margin: 0;
+    padding: 0;
+}
+.widget-area .widget ul li {
+    list-style: none;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    line-height: 18px;
+    color: #505050;
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid #e5e5e5;
+}
+.widget-area .widget ul li a {
+    font-size: 15px;
+    line-height: 18px;
+    color: #34495e;
+    text-decoration: none;
+    padding-top: 10px;
+}
+  
+  /*footer {
+    width: 100%;
+    display: inline-block;
+    margin: 2em 0;
+    height: 70px;
+    background-color: #999;
+    margin-bottom: 0px;
+    position: relative;
+  }
+  footer .copyright {
+    width: 50%;
+    float: left;
+  }
+  @media (max-width: 600px) {
+    footer .copyright {
+      width: 100%;
+    }
+  }
+  footer .copyright p {
+    padding-left: 10%;
+    color: white;
+    font-size: 0.7em;
+    line-height: 70px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+  }
+  @media (max-width: 600px) {
+    footer .copyright p {
+      text-align: center;
+      padding: 0;
+    }
+  }
+  footer .social {
+    width: 50%;
+    float: right;
+  }
+  @media (max-width: 600px) {
+    footer .social {
+      width: 100%;
+    }
+  }
+  footer .social > a {
+    float: left;
+    line-height: 70px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    -moz-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    -webkit-transition: all, 0.3s;
+    transition: all, 0.3s;
+  }
+  footer .social a:hover {
+    background-color: #222;
+    -moz-transition: all, 0.3s;
+    -o-transition: all, 0.3s;
+    -webkit-transition: all, 0.3s;
+    transition: all, 0.3s;
+  }
+  
+  .linked {
+    background-color: #1E83AE;
+    font-size: 1.2em;
+    width: 20%;
+  }
+  
+  .face {
+    text-align: center;
+    background-color: #3D5B94;
+    font-size: 1.2em;
+    width: 20%;
+  }
+  
+  .tweet {
+    background-color: #3DACDD;
+    font-size: 1.2em;
+    width: 20%;
+  }
+  
+  .support {
+    background-color: #6dcd9a;
+    font-size: 0.8em;
+    width: 40%;
+  }
+
+
+*/
+
+@media (max-width:767px){
+    body{
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .text-holder{
+        margin: 0px 0px 0px 0px;
+    }
+    .entry-header{
+        margin-bottom: 15px;
+    }
+    .entry-header .entry-title a{
+        font-size: 23px;
+        line-height: 25px;
+    }
+
+}
+@media (max-width: 767px){
+    .banner-text {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 0px 25px;
+    }
+    .banner-text .text {
+        width: 100%;
+        padding: 17px 0;
+        float: none;
+    }
+    .w-100-r{
+        height: 450px;
+    }
+    .w-100-rp{
+        height: 450px;
+    }
+}
