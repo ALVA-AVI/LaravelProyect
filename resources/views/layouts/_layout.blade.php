@@ -12,15 +12,12 @@
     <link rel="stylesheet" href="{{ asset('css/stilo092020.css') }}">
     <link rel="icon" href="{{ asset('img/2017/04/cropped-LOGO-32x32.png') }}" sizes="32x32">
     <link rel="icon" href="{{ asset('img/2017/04/cropped-LOGO-192x192.png') }}" sizes="192x192">
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-
-
+    @yield('links')
 </head>
 <body>
     {{-- Header --}}
     @include('layouts.partials._header')
-
+  @yield('banner')
         <!--End Header-->
         <!-- Contenido-->
             <main role="main" class="container">
@@ -39,3 +36,7 @@
 </html>
 
 
+<script src="{{ asset('js/main.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
+@yield('scripts')

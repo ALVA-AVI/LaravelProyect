@@ -10,10 +10,10 @@ class Carrusel extends Model
     //
     use SoftDeletes;
     protected $fillable = [
-        'category_id',
+       // 'category_id',
         'titulo',
-        'resena',
-        'linkref'
+        //'resena',
+        //'linkref'
     ];
     protected $dates=['deleted_at'];
     protected $hidden = ['created_at','updated_at'];
@@ -22,8 +22,8 @@ class Carrusel extends Model
     {
         return $this->morphOne('App\Imagen', 'imageable');
     }
-    public function category()
+    /*public function category()
     {
         return $this->belongsTo(Category::class);
-    }
+    }*/
 }

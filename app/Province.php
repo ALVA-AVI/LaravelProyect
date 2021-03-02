@@ -19,13 +19,13 @@ class Province extends Model
     public function distritos(){
         return $this->hasMany(District::class);
     }
-    public function departamentos()
+    public function departamento()
     {
         return $this->belongsTo(Departament::class);
     }
 
-    public function grupopolitico()
-    {
-        return $this->hasMany(GrupoPolitico::class);
+    public function grupopolitico(){
+        return $this->hasOne(GrupoPolitico::class, 'id', 'province_id');
     }
+    
 }

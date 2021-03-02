@@ -12,5 +12,11 @@ class CategorySeeder extends Seeder
     public function run()
     {
         //
+        App\Category::insert([
+            ['name' => "Noticias", 'module' => 1, 'slug' => "noticias"],
+            ['name' => "Registros",'module' => 2, 'slug' => "registros"],
+            ['name' => "Solicitudes", 'module' => 2, 'slug' => "solicitudes"],
+            ['name' => "Banner", 'module' => 1, 'slug' => "banner"],
+        ]);
     }
 }

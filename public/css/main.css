@@ -2,64 +2,108 @@
 .header-menu{
     padding: 0;
     margin-top: -10;
-    text-align: center;
     width: 100%;
-    background-color: #fdfdfd;
 }
 
+/***LOGO HEADER**/
+.content-logo{
+  /*margin-bottom: 2%;*/
+  margin-left: 5%;
+  justify-content: stretch;
+}
+.img{
+  float: left;
+  /*animation: typeimg 5s;
+  animation-iteration-count: infinite;*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+.img-vn{
+  margin-right: 5%;
+  /*animation: typeimg 5s;
+  animation-iteration-count: infinite;*/
+  margin-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 4.5em;
+}
+.texto-logo{
+  list-style-type: none;
+  padding-top: 1%;
+}
+.texto-logo-vn{
+  list-style-type: none;
+  padding-top: 1%;
+}
+ul.texto-logo li h1, ul.texto-logo li h3{
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial';
+  font-weight: bold;
+  color:#0000ff ;
+  /*animation:type 5s;
+  animation-iteration-count: infinite;*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+ul.texto-logo-vn li h1, ul.texto-logo-vn li h3{
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial';
+  font-weight: bold;
+  color:#0000ff ;
+  /*animation:typevn 5s;*/
+  /*animation-iteration-count: infinite;*/
+  overflow: hidden;
+  white-space: nowrap;
+}
+/*
+@keyframes typeimg{
+  0%{
+      width: 0ch;
+  }
+  100%{
+      width: 12ch;
+  }
+}
+@keyframes typevn{
+  0%{
+      width: 0ch;
+  }
+  100%{
+      width: 10ch;
+  }
+}
+@keyframes type{
+  0%{
+      width: 0ch;
+  }
+  100%{
+      width: 20ch;
+  }
+}*/
+/***END LOGO HEADER****/
+
+
 .main-menu{
+  float: left;
   position: fixed;
   width: 100%;
   left: 0;
   top: 0;
-  background: #ffffff;
+  background: #92d3ff;
 }
 .panel-menu{
   position: absolute;
-  background-color: #4867f3;
 }
-
-.ico-facebook{
-  list-style-type: none;
-  margin: 0px;
-  padding-bottom: 5px;
-}
-.ico-facebook .icon-fb{
-  text-align: center;
-  color: #4867f3;
-}
-.ico-facebook .facebook{
-  padding: 5px 12px;
-  color: #442929;
-  text-decoration: none;
-  background-color: #80b6f3;
-  border-radius: 65%;
-}
-.ico-facebook .facebook:hover{
-  color: #fff;
-  background-color: #6f8e91;
-}
-/*.ico-facebook i{
-  padding: 5px 5px;
-  background-color: #c4c7c3;
-  color: #495574;
-  border-radius: 100%;
-}
-.ico-facebook i:hover{
-  background-color: #77976b;
-  color: #fff;
-  padding: 5px 5px;
-  border-radius: 100%;
-}*/
 
 .navega-nav{
   left: 0;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #0000ff;
   border-top: 1px solid #F0F0F0;
   /*position: fixed;*/
   text-align: center;
-
 }
 
 #btn-menu{
@@ -70,7 +114,7 @@
   margin: 0;
   padding: 10px;
   border-right: 1px solid #fff;
-  text-align: center;
+  text-align: left;
   background-color: #acd7da;
   color: #2d2d3dcc;
   display: none;
@@ -91,7 +135,7 @@
   font-family: 'Roboto', serif;
 }
 .menu li{
-  text-align: center;
+  text-align: left;
   flex-wrap: 1;
 }
 .menu li:hover{
@@ -99,8 +143,8 @@
 }
 .menu li a{
   display: block;
-  padding: 10px 20px;
-  color: #030101;
+  padding: 10px 15px;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -108,10 +152,11 @@
   margin: 0;
   padding: 0;
   position: absolute;
-  background-color: #b3c9d8;
+  background-color: #0000ff;
   list-style-type: none;
   flex-direction: column;
   display: none;
+  width: 162px;
 }
 .menu .drop-menu:hover .drop-content{
   display: block;
@@ -129,9 +174,9 @@
   }
   .menu{
       position: absolute;
-      background-color: #98a6e2;
-      width: 40%;
-      margin-left: -40%;
+      background-color: #9e9eac;
+      width: 45%;
+      margin-left: -45%;
       transition: all 0.5s;
   }
   .menu .menu-nav-colect{
@@ -157,11 +202,12 @@
 .content-logo{
   display: none;
 }
+
+
   #btn-menu:checked ~ .menu{
       margin: 0;
-
   }
-  
+
 }
 
 /*
@@ -180,3 +226,31 @@
     padding-top: 24%;
   }
 }*/
+
+
+/*************/
+.group-info{
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  padding: 2%;
+  width: 40%;
+  border-radius: 2em;
+  justify-content: center;
+}
+.title-info{
+  margin-left: 0.45%;
+  width: 18ch;
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+}
+
+/***************************/
+.photo-notice{
+  margin: 5px;
+  float: left;
+}
+
+/****************************/
+.form-group .item-link{
+  background-color: rgba(255, 103, 103, 0.45);
+}

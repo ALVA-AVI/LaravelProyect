@@ -15,13 +15,13 @@ class CreateCarruselsTable extends Migration
     {
         Schema::create('carrusels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('category_id');
+            //$table->unsignedBigInteger('category_id');
             $table->string('titulo');
-            $table->text('resena');
-            $table->text('linkref');
+            //$table->text('resena');
+            //$table->text('linkref');
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('category_id')->references('id')->on('categories');
+            //$table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

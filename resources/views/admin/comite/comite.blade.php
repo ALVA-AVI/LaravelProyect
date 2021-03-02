@@ -32,7 +32,8 @@
                 @include('admin.comite.form.form')
             </div>
             <div class="card-footer">
-
+                <a href="{{ route('comites.index') }}" class="btn btn-danger float-right">Cancelar</a>
+                <input type="submit" value="Actualizar" class="btn btn-primary">
             </div>
         {!! Form::close() !!}
     </div>
@@ -42,50 +43,24 @@
 @section('scripts')
 
 <script>
-    $(document).ready(function(e){
-        $('#departament_id').on('change',function(e){
-            var departament_id = $(this).val();
-            if($.trim(departament_id) != ''){
-                $.ajax({
-                    url:'{{ route("provincias") }}',
-                    type: 'GET',
-                    dataType:'json',
-                    data:{"id":departament_id},
-                    success:function (data) {
-                        $('#province_id').empty();
-                        $('#province_id').append("<option value = ''>Seleccione una Procincia</option>");
-                        $.each(data, function (index, value) {
-                            $('#province_id').append("<option value='" + index + "'>" + value + "</option>");
-                        }); 
-                    },
-                });
-            } 
-        });
-        $('#province_id').on('change',function(e){
-            var model = {
-                "province_id":$(this).val() < 1000 ? "0"+$(this).val() : $(this).val(),
-                "departament_id":$('#departament_id').val() < 10 ? "0"+$('#departament_id').val() : $('#departament_id').val()
-            };
-            console.log(model);
-            
-            if($.trim(province_id) != ''){
-                $.ajax({
-                    url:'{{ route("distritos") }}',
-                    type: 'GET',
-                    dataType:'json',
-                    data: model,
-                    success:function (data) {
-                        $('#district_id').empty();
-                        $('#district_id').append("<option value = ''>Seleccione un Distrito</option>");
-                        $.each(data, function (index, value) {
-                            $('#district_id').append("<option value='" + index + "'>" + value + "</option>");
-                        }); 
-                    },
-                });
-            } 
-        });
-
-    });
+    function validarDocumento(){
+        var archivoInput = document.getElementById('archivo');
+        var archivoRuta = archivoInput.value;
+        var extPermitidas = /(.pdf|.PDF)$/i;
+        if(!extPermitidas.exec(archivoRuta)){
+            alert('Asegurate de haber seleccionado un Documento PDF');
+            archivoInput.value = '';
+            return false;
+        }else{
+            if(archivoInput.files && archivoInput.files[0]){
+                var visor = new FileReader();
+                visor.onload = function(e){
+                    document.getElementById('visorPdf').innerHTML='<embed src="'+e.target.result+'" width="500" height="300">';
+                };
+                visor.readAsDataURL(archivoInput.files[0]);
+            }
+        }
+    }
 </script>
     
 @endsection

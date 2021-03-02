@@ -14,6 +14,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+       /* $this->app->bind('path.public',function(){
+            return'/home/yx5pouwmhdj4/restauracionnacional.org.pe';
+            //return'/home/yx5pouwmhdj4/victorianacional.org.pe';
+        });*/
     }
 
     /**

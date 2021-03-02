@@ -15,15 +15,15 @@ class District extends Model
 
     protected $dates=['deleted_at'];
     protected $hidden = ['created_at','updated_at'];
-    public function provincias()
+    public function provincia()
     {
-        return $this->belongsTo(Province::class);
+        return $this->belongsTo(Province::class,'province_id');
     }
-    public function departamentos()
+    public function region()
     {
-        return $this->belongsTo(Departament::class);
+        return $this->belongsTo(Departament::class,'departament_id');
     }
-    public function grupopolitico(){
+    /*public function grupopolitico(){
         return $this->hasOne(GrupoPolitico::class,'district_id');
-    }
+    }*/
 }

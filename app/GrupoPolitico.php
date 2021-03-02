@@ -24,12 +24,11 @@ class GrupoPolitico extends Model
     public function departament(){
         return $this->belongsTo(Departament::class,'id');
     }
-    /*public function provincia()
+    /*public function province()
     {
-        return $this->belongsTo(Province::class,'id');
-    }*//*
+        return $this->belongsTo(Province::class);
+    }
     public function distrito(){
         return $this->belongsTo(District::class,'id');
     }*/
-    
 }

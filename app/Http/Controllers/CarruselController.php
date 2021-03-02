@@ -10,18 +10,17 @@ class CarruselController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
     public function index(){
         //
-        $carrusel = Carrusel::OrderBy('id','DESC')->with('category','image')->paginate(15);
+        $carrusel = Carrusel::OrderBy('id','DESC')->with('image')->paginate(15);
         return view('admin.banner.index',compact('carrusel'));
     }
 
     public function create(){
         //
-        $category = Category::orderBy('name','ASC')->pluck('name','id');
-        return view('admin.banner.create',compact('category'));
+        return view('admin.banner.create');
     }
 
     public function store(Request $request){
@@ -29,10 +28,10 @@ class CarruselController extends Controller
         //dd($request->all());
         $request->validate([
             'titulo'=>'required|max:60',
-            'category_id'=>'required',
+            /*'category_id'=>'required',
             'resena'=>'max:255',
-            'linkref'=>'required',
-            'image'=>'required|image|dimensions:min_width=600,max_width=2400,min_height=300,max_height=1300|mimes:jpeg,jpg,png'
+            */
+            'image'=>'required|image|mimes:jpeg,jpg,png'
         ]);
         if($request->hasFile('image')){
             $imagen = $request->file('image');
@@ -43,9 +42,6 @@ class CarruselController extends Controller
         }
         $carrusel = new Carrusel();
         $carrusel->titulo = e($request->titulo);
-        $carrusel->category_id = e($request->category_id);
-        $carrusel->resena = e($request->resena);
-        $carrusel->linkref = e($request->linkref);
         $carrusel->save();
         $carrusel->image()->create($urlimage);
         return redirect()->route('banners.index')->with('info',OK_IST);
@@ -54,23 +50,25 @@ class CarruselController extends Controller
 
     public function show($id){
         //
-        $carrusel = Carrusel::where('id',$id)->with('category','image')->firstOrFail();
+        $carrusel = Carrusel::where('id',$id)->with('image')->firstOrFail();
         return view('admin.banner.show',compact('carrusel'));
     }
 
     public function edit($id){
-        $category = Category::orderBy('id','ASC')->pluck('name','id');
-        $carrusel = Carrusel::where('id',$id)->with('category','image')->firstOrFail();
-        return view('admin.banner.edit',compact('carrusel','category'));
+        //$category = Category::orderBy('id','ASC')->pluck('name','id');
+        $carrusel = Carrusel::where('id',$id)->with('image')->firstOrFail();
+        return view('admin.banner.edit',compact('carrusel'));
     }
 
     public function update(Request $request, $id){
         $request->validate([
             'titulo'=>'required|max:60',
-            'category_id'=>'required',
+            /**
+             * 'category_id'=>'required',
             'resena'=>'max:255',
             'linkref'=>'required',
-            'image'=>'image|dimensions:min_width=600,max_width=2400,min_height=300,max_height=1300|mimes:jpeg,jpg,png'
+            */
+            'image'=>'image|mimes:jpeg,jpg,png'
         ]);
         if($request->hasFile('image')){
             $imagen = $request->file('image');
@@ -80,11 +78,8 @@ class CarruselController extends Controller
             $urlimage['url'] = '/images/banner/'.$nombre;
         }
         $carrusel = Carrusel::findOrFail($id);
-        $carrusel->category_id = e($request->category_id);
         $carrusel->titulo = e($request->titulo);
-        $carrusel->resena = e($request->resena);
-        $carrusel->linkref = e($request->linkref);
-        $carrusel->save();
+         $carrusel->save();
         if ($request->hasFile('image')) {
             $carrusel->image()->delete($urlimage);
         }

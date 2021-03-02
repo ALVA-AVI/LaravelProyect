@@ -1,6 +1,6 @@
 <footer>
     <div class="copyright">
-      <p>copy right &copy 2020 - Restauracion Nacional</p>
+      <p>copyright &copy 2020 - Restauracion Nacional</p>
     </div>
     <div class="social">
       <li class="support">

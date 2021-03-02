@@ -1,0 +1,14 @@
+{
+    "Register":"Registrarse",
+    "Login":"Iniciar Sesion",
+    "National Restoration":"Restauracion Nacional",
+    "Name":"Nombre",
+    "E-Mail Address":"Correo Electronico",
+    "Password":"Contraseña",
+    "Confirm Password":"Confirme su Contraseña",
+    "Verify Your Email Address":"Verifique su dirección de correo electrónico",
+    "A fresh verification link has been sent to your email address.":"Se ha enviado un nuevo enlace de verificación a su dirección de correo electrónico.",
+    "Before proceeding, please check your email for a verification link.":"Antes de continuar, consulte su correo electrónico para ver si hay un enlace de verificación.",
+    "If you did not receive the email":"Si no recibió el correo electrónico",
+    "click here to request another":"haga click aquí para solicitar otro"
+}

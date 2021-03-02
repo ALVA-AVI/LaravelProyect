@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Candidato;
 use App\Carrusel;
 use App\Category;
+use App\GrupoPolitico;
 use App\Registro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +14,7 @@ class WebController extends Controller
 {
     //
     public function index(){
-        $carrusel = Carrusel::orderBy('id','DESC')->with('category','image')->get();
+        $carrusel = Carrusel::orderBy('id','DESC')->with('image')->get();
         $categoria = Category::orderBy('name','ASC')->paginate(6);
         $noticia = Registro::orderBy('id','DESC')->join('categories','registros.category_id','=','categories.id')
         ->select('registros.*')->where('categories.module','=','1')->with('category','image')->first();
@@ -50,12 +52,19 @@ class WebController extends Controller
 
     public function modulo($idmodulo){
         if($idmodulo == 2){
-            $documentos = Registro::orderBy('id','DESC')->with('category')->get();
+            $documentos = Registro::orderBy('id','DESC')->with('category')->paginate(20);
             return view('web.files.index',compact('documentos'));
         }
-        if($idmodulo == 3){
-            //$documentos = Registro::orderBy('id','DESC')->with('category')->get();
-            return redirect()->back();
-        }
+    }
+    public function candidato(){
+        $candidatos = Candidato::orderBy('id','DESC')->paginate(15);
+        return view('web.candidato.index',compact('candidatos'));
+    }
+    public function comite(){
+        $comites = GrupoPolitico::orderBy('id','DESC')->paginate(15);
+        return view('web.comite.index',compact('comites'));
+    }
+    public function contacta(){
+
     }
 }

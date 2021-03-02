@@ -9,7 +9,7 @@ class TemaController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verified']);
     }
 
     public function index(){
@@ -55,8 +55,9 @@ class TemaController extends Controller
      * @param  \App\Tema  $tema
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tema $tema)
+    public function destroy($id)
     {
-        //
+        $tema = Tema::findOrFail($id)->delete();
+        return back()->with('info',OK_DEL);
     }
 }

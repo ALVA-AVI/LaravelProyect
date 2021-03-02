@@ -19,9 +19,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Título</th>
-                    <th>Region</th>
-                    <th>Provincia</th>
-                    <th>Distrito</th>
+                    <th>Zona</th>
                     <th>Fecha</th>
                     <th>Resumen</th>
                     <th colspan="2"></th>
@@ -32,14 +30,20 @@
                     <tr>
                         <td>{{ $comite->id }}</td>
                         <td>{{ $comite->titulo }}</td>
-                        <td>{{ $comite->departament->name}}</td>
-                        <td>{{ $comite->province_id }}</td>
-                        <td>{{ $comite->district_id }}</td>
+                        <td>{{ $comite->departament_id}}</td>
+                        <!--td>{{-- $comite->province_id --}}</td-->
+                        <!--td>{{-- $comite->district_id --}}</td-->
                         <td>{{ $comite->fecha }}</td>
                         <td>{{ $comite->descripcion }}</td>
                         {{-- <td><ahref=""class="btnbtn-warningbtn-smfloat-right"><iclass="fafa-eye"></i></a></td> --}}
                         <td width="15px"><a href="{{ route('comites.edit',$comite->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a></td>
-                        <td width="15px"><a href="" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a></td>
+                        <td width="15px">
+                            {!! Form::open(['route'=>['comites.destroy',$comite->id],'method'=>'DELETE']) !!}
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            {!! Form::close() !!}    
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
@@ -47,7 +51,7 @@
         {{ $comites->render() }}
     </div>
     <div class="card-footer">
-        <div class="float-right">total de comites <strong> {{ count($comites) }}</strong></div>
+        <div class="float-right">Total de comites <strong> {{ count($comites) }}</strong></div>
     </div>
 </div>
 @endsection

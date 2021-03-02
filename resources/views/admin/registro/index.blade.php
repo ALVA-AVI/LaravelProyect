@@ -44,13 +44,13 @@
                             @endforeach</td>
                             <td>{{ $registro->resumen }}</td>
                             <td>{{ date("d/m/yy",strtotime($registro->fecha)) }}</td>
-                            <td>
+                            <td width="30">
                                 <a href="{{ route('registros.edit',$registro->id) }}" class="btn btn-info btn-sm"><i class="fa fa-edit"></i></a>
                             </td>
-                            <td>
+                            <td width="30">
                                 <a href="{{ route('registros.show',$registro->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-eye"></i></a>
                             </td>
-                            <td>
+                            <td width="30">
                                 {!! Form::open(['route'=>['registros.destroy',$registro->id],'method'=>'DELETE']) !!}
                                 <button class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash-alt"></i>
@@ -65,6 +65,7 @@
         </div>
         <div class="card-footer">
             footer
+            <strong class="float-right">Total {{ count($registros) }}</strong>
         </div>
     </div>
 @endsection

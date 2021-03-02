@@ -2,11 +2,33 @@
     font-size: 14px;
     font-family: 'Roboto' serif;
 }
+/***********************/
+.importa{
+    color: #fc0606;
+}
+/***********************/
+.banner-slider{
+    margin-top: 8.7em;
+}
+.home-contenido{
+    margin-top: 2em;
+}
 .formulario-center{
     position: relative;
-    margin-top: 20%;
+    margin-top: 9em;
     float: center;
 }
+.princip-docs{
+    list-style-type: none;
+    display: flow-root;
+    background-color: transparent;
+    margin: 15px;
+    padding: 0;
+}
+.princip-docs li{
+    padding: 0.21em;
+}
+
 .nav-active{
     background-color: rgba(0,0,0,0.3);
 }
@@ -23,20 +45,26 @@
 @media(max-width:1200px){
     @media screen {
         .formulario-center{
-            margin-top: 25%;
+            margin-top: 15%;
         }
     }
 }
 
 @media(max-width: 990px){
     .formulario-center{
-        margin-top: 35%;
+        margin-top: 8.7em;
+    }
+    .banner-slider{
+        margin-top: 8.7em;
     }
 }
 
 @media(max-width: 767px){
     .formulario-center{
         margin-top: 10%;
+    }
+    .banner-slider{
+        margin-top: 3.2em;
     }
 }
 @media(max-width: 515px){
@@ -121,20 +149,20 @@ footer .social li:hover{
     font-size: 1.2em;
     width: 20%;
 }
-  
+
 .face {
     text-align: center;
     background-color: #3D5B94;
     font-size: 1.2em;
     width: 20%;
 }
-  
+
 .tweet {
     background-color: #3DACDD;
     font-size: 1.2em;
     width: 20%;
 }
-  
+
 .support {
     background-color: #6dcd9a;
     font-size: 0.8em;

@@ -7,53 +7,54 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-lg-9">
-                       @if ($noticia->image->url != "" || $noticia->image->url != null)
-                       <div class="card">
-                           <div class="card-header">
-                               <h4 class="card-title">{!! htmlspecialchars_decode($noticia->titulo) !!}</h4>
-                           </div>
-                           <div class="card-body">
-                               <div class="row">
-                                   <div class="col-lg-6">
-                                       <img src="{{ $noticia->image->url }}" class="card-img-top" alt="">
-                                       <hr>
-                                       {{ $noticia->resumen }}
-                                       <hr>
-                                       <!--p class="lead">
-                                           Archivos
-                                       </p>
-                                       <ul class="list-group list-group-horizontal-md">
-                                           <li class="list-group-noticia"><a href="">Documento</a></li>
-                                           <li class="list-group-noticia"><a href="">Imagen</a></li>
-                                         </ul-->
-                                   </div>
-                                   <div class="col-lg-6">
-                                       {!! htmlspecialchars_decode($noticia->contexto) !!}
-                                   </div>
-                                   
-                               </div>
-                           </div>
-                           <div class="card-footer">
-                               <div class="lead">
-                                   <p> publicado el {{ date("d - m - yy",strtotime($noticia->fecha)) }}</p>
-                               </div>
-                           </div>
-                       </div>
-                       @else
-                               <div class="card">
-                                   <div class="card-header">
-                                        <h3 class="card-title">{{ $noticia->titulo }}</h3>
-                                   </div>
-                                   <div class="card-body">
-                                       @if ($noticia->contexto != "" || $noticia->contexto != null)
-                                           {!! htmlspecialchars_decode($noticia->contexto) !!}
-                                        @else
-                                            {!! htmlspecialchars_decode($noticia->resumen) !!}
-                                       @endif
-                                   </div>
-                               </div>
-                               <hr>
-                       @endif
+                        @if ($noticia->image->url != "" || $noticia->image->url != null)
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title text-muted">
+                                        {!! htmlspecialchars_decode($noticia->titulo) !!}
+                                    </h5>
+                                </div>
+                                @if ($noticia->contexto != "" || $noticia->contexto != null)
+                                    <div class="card-body">
+                                        <img src="{{ $noticia->image->url }}" width="250" height="150" class="photo-notice">
+                                        <div class="h4 text-muted">
+                                            {{ $noticia->resumen }}
+                                        </div>
+                                        <p>
+                                            {!! htmlspecialchars_decode($noticia->contexto) !!}
+                                        </p>
+                                        @if ($noticia->archivo != "" || $noticia->archivo != null)
+                                        <fieldset class="group-info">
+                                            <legend class="title-info">Información Adjunta:</legend>
+                                            <a target="_blanck" href="{{ asset('storage/'.$noticia->archivo) }}" class="btn btn-info"><i class="fa fa-eye"></i> Revisar Información</a>
+                                        </fieldset>
+                                        @endif
+                                    </div>
+                                @else 
+                                    <div class="card-body">
+                                        <img src="{{ $noticia->image->url }}" alt="" class="img-fluid">
+                                        <br><br>
+                                        <div class="h4 text-muted">
+                                            {{ $noticia->resumen }}
+                                        </div>
+                                        <br>
+                                        @if ($noticia->archivo != "" || $noticia->archivo != null)
+                                        <fieldset class="group-info">
+                                            <legend class="title-info">Información Adjunta:</legend>
+                                            <a target="_blanck" href="{{ asset('storage/'.$noticia->archivo) }}" class="btn btn-info"><i class="fa fa-eye"></i> Revisar Información</a>
+                                        </fieldset>
+                                        @endif
+                                    </div>
+                                @endif
+                                <div class="card-footer">
+                                    <div class="lead">
+                                        <p> publicado el {{ date("d - m - yy",strtotime($noticia->fecha)) }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @else
+                            salir   
+                        @endif
                     </div>
                     <div class="col col-lg-3">
                         <div class="card">
